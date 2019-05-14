@@ -1,0 +1,26 @@
+Print the elements of an array in the decreasing frequency if 2 numbers have same frequency then print the one which came first.
+
+def decreasingFrequency(nums):
+  counter = {}
+  group = collections.defaultdict(list)
+  for n in nums:
+    counter[n] = counter.get(n,0)+1
+  
+  for n in nums:
+    freq = counter[n]
+    if n not in group[freq]: group[freq].append(n)
+    
+ output = []
+ freqs = group.keys()
+ freqs.sort(key =lambda x:-x)
+ for freq in freqs:
+    output.extend(group[freq])
+ 
+ return output
+ 
+ 
+  
+  
+  
+  
+    

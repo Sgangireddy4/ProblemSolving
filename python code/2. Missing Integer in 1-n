@@ -1,0 +1,26 @@
+You are given a list of n-1 integers and these integers are in the range of 1 to n. 
+There are no duplicates in list. One of the integers is missing in the list. Write an efficient code to find the missing integer.
+
+def MissingNumber(nums):
+  Real = sum(nums)
+  n = len(nums)
+  expected = (n*(n-1))/2
+  return expected -Real
+  
+#if large numbers, above method can result in overflow. so another method is based on bit operation XOR. 
+a^a = 0.
+#Since elements in 1-n range are in indices (0 to n-2), so indice+1 are in range (1, n-1)
+Add to this n
+Then XOR each element with this indice+1 list. 
+We shall negate every number except the missing number. 
+
+def MissingNumber(nums):
+  n = len(nums)+1
+  for i range(len(nums)):
+    n = n^((i+1)^nums[i])
+  return n
+ 
+ # Complexity analysis. Since we are running through the loop only once, O(n) time complexity and as we are storing only one (in last case) 
+ or two (in first case) variables, O(1) space complexity
+
+  

@@ -1,0 +1,35 @@
+Given a 2D array, print it in spiral form. 
+
+ def spiralOrder(matrix):
+    n = len(matrix)
+    if n ==0: return []
+    m = len(matrix[0])
+    if m==0: return[]
+
+    ans = []
+
+    def loop(i_start, i_end, j_start, j_end):
+        if i_start > i_end or j_start > j_end: return
+        if i_end - i_start ==0 and j_end-j_start ==0: ans.append(matrix[i_end][j_end])
+        elif i_end == i_start:
+            for j in range(j_start, j_end+1):
+                ans.append(matrix[i_end][j])
+        elif j_start == j_end:
+            for i in range(i_start, i_end+1):
+                ans.append(matrix[i][j_end])
+        else:
+            for j in range(j_start, j_end+1):
+                ans.append(matrix[i_start][j])
+            for i in range(i_start+1, i_end+1):
+                ans.append(matrix[i][j_end])
+            for j in range(j_end-1, j_start-1, -1):
+                ans.append(matrix[i_end][j])
+            for i in range(i_end-1, i_start, -1):
+                ans.append(matrix[i][j_start])
+            loop(i_start+1, i_end-1, j_start+1, j_end-1)
+
+    loop(0, n-1, 0, m-1)
+    return ans
+        
+                
+                

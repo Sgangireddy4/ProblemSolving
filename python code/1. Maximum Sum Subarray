@@ -1,0 +1,24 @@
+Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers which has the largest sum.
+
+def maxSubArray(nums):
+      if max(nums) <=0: 
+          return max(nums)
+
+      max_sum = 0
+      max_sofar = 0
+      for i in range(len(nums)):
+          if nums[i] >=0: 
+              max_sofar += nums[i]
+
+          elif nums[i] <0:
+              if max_sofar > -1*nums[i]: #carried value > negative from this portion
+                  max_sofar += nums[i]
+              else:
+                  max_sofar = 0
+
+          if max_sofar > max_sum: max_sum = max_sofar
+
+      return max_sum
+      
+ # Complexity analysis. Since we are running through the loop only once, O(n) time complexity and as we are storing only two variables,
+ #O(1) space complexity

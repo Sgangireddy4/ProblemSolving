@@ -1,0 +1,19 @@
+Given an unsorted array of integers, find a subarray which adds to a given number. 
+If there are more than one subarrays with sum as the given number, print any of them.
+
+def SubarrayofTargetSum(nums, k):
+      n = len(nums)
+      if n == 0: return None
+      sums_dict = {}
+      sums_dict[0] = -1    #at the beginning we start before 0. 
+      for i in range(len(nums)):
+          total = total + nums[i]
+          sums_dict[total] = i #may over-write but that;s okay since we are finding a single array of that target sum not all
+          if total-k in sums_dict:
+              return [sums_dict[total-k]+1, i]
+
+      return None
+                    
+# Complexity analysis. Since we are running through the loop only once, O(n) time complexity and as we are storing a dictionary with all
+sums visited (each new sum at each new index), O(n) space complexity
+

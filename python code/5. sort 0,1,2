@@ -1,0 +1,22 @@
+Write a program to sort an array of 0's,1's and 2's in ascending order.
+Using Dutch Partitioning. 
+The loop invariant is that all points upto red pointer are already 0, 
+from red to white pointer are 1,  and points from blue to end are 2s. 
+We will run over the points between white and blue and assign them to each zone.
+
+def sortColors(self, nums):
+  red, white, blue = 0, 0, len(nums)-1    
+  while white <= blue:
+      # print(red, white, blue, nums)
+      if nums[white] == 0:
+          nums[red], nums[white] = nums[white], nums[red]
+          white += 1
+          red += 1
+      elif nums[white] == 1:
+          white += 1
+      else:
+          nums[white], nums[blue] = nums[blue], nums[white]
+          blue -= 1
+          
+ #no return value - the function will update the list.
+        

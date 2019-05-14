@@ -1,0 +1,34 @@
+Given an array and a number k where k is smaller than size of array, we need to find the k’th smallest element in the given array. 
+It is given that all array elements are distinct.
+
+#using Max-heap
+def findKthSmallest(nums, k):
+  def downheap(S,i):
+      if (2*i+1) < len(S):
+          left = 2*i +1
+          largest_child = left
+          if 2*i+2 < len(S):
+              right = 2*i+2
+              if S[right] > S[left]:
+                  largest_child = right
+          if S[largest_child] > S[i]:
+              S[largest_child], S[i] = S[i], S[largest_child]
+              downheap(S, largest_child)
+
+  def heapify (S):
+      n = len(S)-1
+      start = n-1//2
+      for i in range(start, -1,-1):
+          downheap(S,i)
+
+
+  heap = nums[:k]
+  heapify(heap)
+
+  for i in range(k,len(nums)):
+      if nums[i] > heap[0]:
+          heap[0] = nums[i]
+          downheap(heap,0)
+
+
+  return heap[0]

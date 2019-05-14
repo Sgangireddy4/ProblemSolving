@@ -1,0 +1,38 @@
+
+ 
+kth smallest:
+https://youtu.be/sKfhCntQYpk
+
+leaders:
+https://youtu.be/-AMV5SezZzE
+
+missing number:
+https://youtu.be/UKwAqvdbBNw
+
+sort 012:
+https://youtu.be/HpXKfYq_3hI
+
+spiral reading:
+https://youtu.be/Uu3hygAt-Sg
+
+Subarray Sumof TargetValue all numbers:
+https://youtu.be/9bm8G3SatYM
+https://youtu.be/p6g3COa70Vw
+
+SubarraySum of Target Value Only NonNegativeIntegers:
+https://youtu.be/cKTbuiqqkDU
+
+Contiguous Subarray Max:
+https://youtu.be/sWr3fP7-xdg
+https://youtu.be/3zDG0T0V79M
+https://youtu.be/cF-dVEpkS0Y
+https://youtu.be/WpqfZQb9m6o
+
+decreasing frequency stack:
+https://youtu.be/s9oVNs3AQC4
+
+
+equilibrium index:
+https://youtu.be/j22WA5mgp5I
+https://youtu.be/VCbCHu-T9h0
+

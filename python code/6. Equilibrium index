@@ -1,0 +1,17 @@
+Equilibrium index of an array is an index such that the sum of elements at lower indexes is equal to the sum of elements at higher indexes. 
+Write a function int equilibrium(int[] arr, int n); that given a sequence arr[] of size n, returns an equilibrium index 
+(if any) or -1 if no equilibrium indexes exist.
+
+def Equilibirum(nums, n):
+  if n==0 or n==2: return None
+  if n==1: return 0
+  
+  S = sum(nums)
+  Left = 0
+  Right = S-nums[0]
+  for i in range(len(nums)):
+      if Left == Right: return i
+      Left+= nums[i]
+      if i != len(nums)-1: Right -= nums[i+1]
+   
+  return None # we did not find any index with balance
